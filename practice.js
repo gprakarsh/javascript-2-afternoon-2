@@ -126,8 +126,19 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   Have divider return an Array with the first item in the array being the evens array (all the even values from numbersArray) and the second item in the Array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
-
+function divider(numbersArray){
+  let newArray=[];
+  let evensArray= numbersArray.filter(function(num){
+    return num%2===0
+  })
+  let oddsArray= numbersArray.filter(function(num){
+    return num%2!==0
+  })
+  
+  newArray.push(evensArray);
+  newArray.push(oddsArray);
+  return newArray;
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -147,7 +158,10 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+function finder(arr){
+  var rdm = getRandomArbitrary()
+  return arr.includes(rdm);
+}
 
 
 
@@ -176,7 +190,34 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+function removeItem(myGroceryList,item){
+  if(myGroceryList&&item){
+  if(myGroceryList.includes(item)){
+    let i=myGroceryList.indexOf(item)
+    myGroceryList.splice(i,1)
+      
+  }
+  return myGroceryList
+}
+else{
+  return [];
+}
+}
+
+
+function addItem(myGroceryList,item){
+  if(myGroceryList&&item){
+  myGroceryList.push(item)    
+  return myGroceryList  
+}
+  
+else{
+  return [];
+}
+}
+
+
+
 
 
 
@@ -186,7 +227,15 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
+function maker(){
+  let arr=[];
+  let j=1;
+  for (let i=0;i<215;i++){
+    arr.push(j);
+    j++;
+  }
+  return arr
+}
 
 
 
@@ -202,7 +251,12 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
+function addTen(numbers){
+for(let i=0;i<numbers.length;i++){
+  numbers[i]=parseInt(numbers[i])+10;
+}
+return numbers
+}
 
 
 
@@ -227,7 +281,14 @@ for(var i = 0; i < num2; i++){
   Return the array which is longest.
 */
 
-//Code Here
+function longer (arr1,arr2){
+ if(arr1.length>arr2.length){
+   return arr1
+ }
+ else{
+   return arr2
+ }
+}
 
 
 
@@ -239,7 +300,17 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
+function both(arr1,arr2){
+  let newArray=[]
+  for(let i=0;i<arr1.length;i++){
+    for(let j=0;j<arr2.length;j++){
+      if(arr1[i]===arr2[j]){
+        newArray.push(arr1[i])
+      }
+    }
+  }
+  return newArray
+}
 
 
 
@@ -279,16 +350,17 @@ var colt = {
   After that console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
-
-
+devMountainEmployees.push(tyler,cahlan,ryan,colt);
+console.log(devMountainEmployees,length);
 
 /*
   Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
-
-//Code Here
+if(devMountainEmployees.includes(cahlan)){
+  let i = devMountainEmployees.indexOf(cahlan);
+  devMountainEmployees.splice(i,1) 
+}
 
 
 
@@ -300,7 +372,7 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
+let users = [];
 
 
 
@@ -319,9 +391,21 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
+var user2 = {
+  name: 'Thgvkhgvkj McGinnis',
+  email: 'tylermcginnis34@gmail.com',
+  password: 'iLoveJahgkghvvaScript',
+  username: 'infinitehgcjgfcLoop'
+};
 
+var user3 = {
+  name: 'Tyhghgvkhgv McGinnis',
+  email: 'tylermcginnis35@gmail.com',
+  password: 'iLoveJavaScriptvytzuyrrdkg',
+  username: 'infiniteLoohtdjhgvljhbp'
+};
 
+users.push(user1,user2,user3);
 
 /*
   Now you have a very common data structure. 
@@ -333,8 +417,11 @@ var user1 = {
   Once you find the particular index he's located in, delete him from the array.
 */
 
-//Code Here
-
+for(let i=0;i<users.length;i++){
+  if(users[i].email==="tylermcginnis33@gmail.com"){
+       users.splice(i,1)
+  }
+}
 
 
 /*
